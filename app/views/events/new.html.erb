@@ -1,0 +1,23 @@
+<h2 style="margin-left: -5%;">New Event Details</h2>
+<%= form_with model: @event do |form| %>
+  <p>
+    <%= form.label :category_id %><br>  
+     <%= form.select(:category_id, Location.all.collect { |event| [event.id] }, {:include_blank => true, :selected => form.object.category_id}) %>
+ 
+  </p>
+  <p>
+    <%= form.label :location_id %><br>
+    <%= form.select(:location_id, Location.all.collect { |event| [event.id] }, {:include_blank => true, :selected => form.object.location_id}) %>
+  </p>
+
+  </p>
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+  <div>
+</div>
+<% end %>

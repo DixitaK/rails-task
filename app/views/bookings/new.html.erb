@@ -1,0 +1,22 @@
+<h2 style="margin-left: -5%;">New Booking Details</h2>
+<%= form_with model: @booking do |form| %>
+  <p>
+    <%= form.label :user_id %><br>
+    <%= form.select(:user_id, Event.all.collect { |booking| [booking.id] }, {:include_blank => true, :selected => form.object.user_id}) %>
+  </p>
+  <p>
+    <%= form.label :event_id %><br>
+    <%= form.select(:event_id, Event.all.collect { |booking| [booking.id] }, {:include_blank => true, :selected => form.object.event_id}) %>
+  </p>
+
+  </p>
+  <p>
+    <%= form.label :capacity %><br>
+    <%= form.text_field :capacity %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+  <div>
+</div>
+<% end %>

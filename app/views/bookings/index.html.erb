@@ -1,0 +1,21 @@
+<h2>Booking Details</h2>
+<table>
+  <thead>
+    <th>User</th>
+    <th>Event</th>
+    <th>Status</th>
+    <th>Update</th>
+  </thead>
+  <tbody>
+
+    <% @bookings.each do |b| %>
+    <tr>
+        <td><%= b.user.name %></td>
+        <td><%= b.event.name %></td>
+        <td><%= b.status %></td>
+        <td><%= link_to "Confirm", new_user_path %><br>
+          <br><%= link_to "Cancel", new_user_path %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
